@@ -1,0 +1,20 @@
+
+.header {
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    .logo {
+      padding: 8px 20px;
+    }
+    .menu {
+      .list {
+        display: flex;
+        gap: 15px;
+        .item {
+          padding: 8px 12px;
+        }
+      }
+  }
+  }
+  
+}
