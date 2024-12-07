@@ -1,0 +1,13 @@
+
+.logo {
+  padding: 8px 20px;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 130%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--white);
+  .link:hover {
+    text-shadow: 0 0 5px var(--white);
+  }
+}
