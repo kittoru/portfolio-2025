@@ -1,0 +1,28 @@
+
+.hero {
+  .inner {
+    padding: 200px 82px;
+    .item {
+      font-size: 40px;
+      display: flex;
+      align-items: end;
+      &::after {
+        content: '';
+        margin-bottom: -4px;
+        display: block;
+        height: 6px;
+        width: 20px;
+        background-color: var(--white);
+        animation: show 0.4s alternate infinite;
+      }
+      @keyframes show {
+        0%{
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
