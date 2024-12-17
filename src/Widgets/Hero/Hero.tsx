@@ -2,6 +2,7 @@ import styles from './Hero.module.scss';
 
 
 export const Hero = () => {
+  
   return <section className={styles.hero}>
     <div className="container">
       <div className={styles.inner}>
@@ -12,7 +13,12 @@ export const Hero = () => {
         </p>
         <p className={styles.subtext}>Junior frontend developer</p>
         </div>
-        <div className={styles.circle}>
+        <div className={styles.right}>
+          <div className={`${styles.back} ${styles.circle}`}>
+            <div className={`${styles.center} ${styles.circle}`}></div>
+          </div>
+        </div>
+        {/* <div className={styles.circle}>
           <svg width="497" height="479" viewBox="0 0 497 479" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g filter="url(#filter0_f_858_560)">
               <path fill="url(#paint0_radial_858_560)">
@@ -42,7 +48,7 @@ export const Hero = () => {
               </radialGradient>
             </defs>
           </svg>
-        </div>
+        </div> */}
       </div>
     </div>
   </section>
