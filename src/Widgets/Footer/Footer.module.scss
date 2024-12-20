@@ -1,0 +1,18 @@
+
+.footer {
+  padding-top: 100px;
+  .inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .list {
+      display: flex;
+      justify-content: center;
+      gap: 100px;
+    }
+    .text {
+      padding: 20px 0;
+      text-align: center;
+    }
+  }
+}
