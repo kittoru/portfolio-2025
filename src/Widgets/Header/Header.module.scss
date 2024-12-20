@@ -3,15 +3,19 @@
   .inner {
     display: flex;
     justify-content: space-between;
-    .logo {
-      padding: 8px 20px;
-    }
+    align-items: center;
+    padding: 20px 0;
     .menu {
       .list {
         display: flex;
         gap: 15px;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 130%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
         .item {
-          padding: 8px 12px;
+          padding: 12px 20px;
         }
       }
   }
