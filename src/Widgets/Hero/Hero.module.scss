@@ -38,7 +38,7 @@
           width: 21.875rem;
           height: 21.875rem;
           animation: moveCenter ease-in-out 4s infinite alternate;
-          animation-delay: 4s;
+          animation-delay: 4.2s;
         }
       }
     }
@@ -60,7 +60,7 @@
         transform: rotate(0deg);
       }
       100% {
-        box-shadow: 0 30px 30px 0 rgba(191, 189, 208, 0.5), 0 -30px 30px 0 rgba(255, 255, 255, 0.5); 
+        box-shadow: 30px 30px 30px 0 rgba(191, 189, 208, 0.5), 0 -30px 30px 0 rgba(255, 255, 255, 0.5); 
         transform: rotate(180deg);
       }
     }
