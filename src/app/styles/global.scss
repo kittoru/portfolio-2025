@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -24,7 +25,7 @@ html {
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 20px 82px;
+  padding: 0 82px;
 }
 
 ul {
@@ -37,10 +38,30 @@ a {
   color: inherit;
 }
 
+button {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
 body {
   height: 100%;
+  width: 100%; 
+  overflow-x: hidden;
+  font-family: var(--font-family);
+  color: var(--dark);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 148%;
+  background-color: var(--color-bg);
 }
 
 main {
   flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
 }
