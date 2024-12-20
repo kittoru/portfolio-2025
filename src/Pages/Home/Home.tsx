@@ -1,5 +1,5 @@
 import styles from './Home.module.scss';
-import { Header } from "../../Widgets"
+import { About, Footer, Header, Hero, Projects } from "../../Widgets"
 
 
 export const Home = () => {
@@ -7,15 +7,11 @@ export const Home = () => {
     <>
       <Header />
       <main className={styles.main}>
-        <div className="container">
-          main
-        </div>
+        <Hero />
+        <About />
+        <Projects />
       </main>
-      <footer className={styles.footer}>
-        <div className="container">
-          footer
-        </div>
-      </footer>
+      <Footer />
     </>
   )
 }
