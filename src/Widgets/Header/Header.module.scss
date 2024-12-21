@@ -18,7 +18,20 @@
           padding: 12px 20px;
         }
       }
+    }
   }
+  @media (max-width: 570px) {
+    .inner {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      .menu {
+        .list {
+          .item {
+            padding: 8px 12px;
+          }
+        }
+      }
+    }
   }
-  
 }
