@@ -22,6 +22,7 @@
       position: absolute;
       z-index: -10;
       left: 60%;
+      transform: translate(-15%, 0);
       .circle {
         border-radius: 50%;
         background-color: var(--color-neumorphic-bg);
@@ -65,16 +66,19 @@
       }
     }
   }
-  @media (max-width: 1320px) {
+  
+  @media (max-width: 1210px) {
     .inner {
-      // padding: 250px 20px;
+      .right {
+        transform: translate(-18%, 0);
+      }
     }
   }
   @media (max-width: 1170px) {
     .inner {
       .right {
         left: 50%;
-        transform:translate(0, 0);
+        transform: translate(-15%, 0);
       }
     }
   }
@@ -95,6 +99,20 @@
   @media (max-width: 870px) {
     .inner {
       padding: 250px 20px;
+    }
+  }
+  @media (max-width: 840px) {
+    .inner {
+      .right {
+        .back {
+          height: 15.625rem;
+          width: 15.625rem;
+          .center {
+            height: 11.25rem;
+            width: 11.25rem;
+          }
+        }
+      }
     }
   }
   @media (max-width: 750px) {
