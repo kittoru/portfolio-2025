@@ -36,7 +36,6 @@
     }
     
   }
-  
   .bottom {
     margin-top: 40px;
     display: flex;
@@ -47,7 +46,7 @@
       @include mixins.h3;
     }
     .list {
-      width: 300px;
+      max-width: 300px;
       display: flex;
       margin: auto;
       justify-content: center;
@@ -62,6 +61,37 @@
     }
     100% {
       transform: rotate(-15deg);
+    }
+  }
+  @media (max-width: 1360px) {
+    & {
+      gap: 20px;
+
+    }
+  }
+  @media (max-width: 1150px) {
+    &{
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr auto;
+      gap: 30px;
+      .top {
+        margin-top: 0;
+        justify-content: center;
+        gap: 20px;
+        .description {
+          text-align: center;
+        }
+      }
+      .bottom {
+        margin-top: 0;
+      }
+    }
+  }
+  @media (max-width: 550px) {
+    & {
+      .link {
+          display: none;
+      }
     }
   }
 }
