@@ -131,14 +131,38 @@
   }
   @media (max-width: 620px) {
     .inner {
-      padding: 150px 0;
+      padding: 100px 0;
     }
   }
-  @media (max-width: 380px) {
+  @media (max-width: 500px) {
     .inner {
       .left {
         .text {
-          font-size: 28px;
+          font-size: 1.6875rem;
+        }
+      }
+      .right {
+        .back {
+          height: 12.625rem;
+          width: 12.625rem;
+          .center {
+            height: 9.25rem;
+            width: 9.25rem;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 400px) {
+    .inner {
+      .right {
+        .back {
+          height: 12.625rem;
+          width: 12.625rem;
+          .center {
+            height: 9.25rem;
+            width: 9.25rem;
+          }
         }
       }
     }
