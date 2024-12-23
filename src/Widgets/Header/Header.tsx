@@ -1,7 +1,11 @@
-import { Logo } from '../../Shared';
+import { useState } from 'react';
+import { Burger, Logo, useScrollLock } from '../../Shared';
 import styles from './Header.module.scss';
 
 export const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  useScrollLock(isOpen);
+
   return (
     <header className={styles.header}>
       <div className="container">
@@ -14,6 +18,12 @@ export const Header = () => {
               <li className={styles.item}><a href="#contacts">Контакты</a></li>
             </ul>
           </nav>
+          <button className={`${styles.btn} ${isOpen? styles.active: ''}`}
+          onClick={() => {setIsOpen(!isOpen)}}>
+            <span></span>
+            <span></span>
+          </button>
+          {isOpen? <Burger close={setIsOpen}/>: <></>}
         </div>
       </div>
     </header>

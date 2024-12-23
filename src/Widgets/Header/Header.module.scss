@@ -19,18 +19,37 @@
         }
       }
     }
-  }
-  @media (max-width: 570px) {
-    .inner {
-      flex-wrap: wrap;
+    .btn {
+      z-index: 10;
+      width: 24px;
+      height: 24px;
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      align-items: center;
       justify-content: center;
-      gap: 10px;
+      & span {
+        display: block;
+        height: 2px;
+        width: 20px;
+        background-color: var(--dark);
+        transition: 0.3s ease;
+      }
+      &.active span:first-child {
+        transform: rotate(45deg) translateY(3px) translateX(2px);
+      }
+      &.active span:last-child {
+        transform: rotate(-45deg) translateY(-3px) translateX(2px);
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    .inner {
       .menu {
-        .list {
-          .item {
-            padding: 8px 12px;
-          }
-        }
+        display: none;
+      }
+      .btn {
+        display: flex;
       }
     }
   }
