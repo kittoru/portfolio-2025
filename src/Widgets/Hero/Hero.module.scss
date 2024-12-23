@@ -115,10 +115,14 @@
       }
     }
   }
+  @media (max-width: 768px) {
+    .inner {
+      padding: 150px 20px;
+      justify-content: center;
+    }
+  }
   @media (max-width: 750px) {
     .inner {
-      justify-content: center;
-      padding: 150px 20px;
       .left {
         .text {
           font-size: 30px;
