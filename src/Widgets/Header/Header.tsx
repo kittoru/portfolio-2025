@@ -1,10 +1,21 @@
 import { useState } from 'react';
 import { Burger, Logo, useScrollLock } from '../../Shared';
 import styles from './Header.module.scss';
+import { animated, useTransition } from '@react-spring/web';
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   useScrollLock(isOpen);
+
+  const transitions = useTransition(isOpen, {
+    from: {transform: 'translateX(100%)'},
+    enter: {transform: 'translateX(0%)'},
+    leave: {transform: 'translateX(100%)'},
+    config: {
+      tension: 280, 
+      friction: 60,
+    },
+  });
 
   return (
     <header className={styles.header}>
@@ -23,7 +34,13 @@ export const Header = () => {
             <span></span>
             <span></span>
           </button>
-          {isOpen? <Burger close={setIsOpen}/>: <></>}
+          {transitions((style, isOpen) => (
+            <>
+            {isOpen? <animated.div style={style} className={styles.mobile}>
+              <Burger close={setIsOpen}/>
+            </animated.div>: <></>}
+          </>
+          ))}
         </div>
       </div>
     </header>
