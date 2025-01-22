@@ -32,7 +32,6 @@
       height: 21.875rem;
       border-radius: 50%;
       box-shadow: 30px 30px 40px 0 var(--color-neumorphic-shadow-70), -30px -30px 40px 0 var(--color-neumorphic-light-70);
-    animation: moveShadow ease-in-out 4s infinite alternate;
     }
     
   }
@@ -52,15 +51,6 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 10px;
-    }
-  }
-
-  @keyframes moveShadow {
-    0% {
-      transform: rotate(15deg);
-    }
-    100% {
-      transform: rotate(-15deg);
     }
   }
   @media (max-width: 1360px) {
