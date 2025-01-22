@@ -1,7 +1,11 @@
 
 
 .list {
+  position: fixed;
   width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9;
   height: 100vh;
   display: flex;
   flex-direction: column;
