@@ -42,13 +42,6 @@
         transform: rotate(-45deg) translateY(-3px) translateX(2px);
       }
     }
-    .mobile {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 9;
-    }
   }
   @media (max-width: 768px) {
     .inner {
