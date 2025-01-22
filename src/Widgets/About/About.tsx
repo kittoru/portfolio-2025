@@ -1,12 +1,17 @@
-
+import { motion } from 'motion/react';
 import styles from './About.module.scss';
 import { list } from './constants';
 
 export const About = () => {
   const skills = list.map((item,index) => {
-    return <li key={index} className={styles.item}>
+    return <motion.li key={index} className={styles.item}
+      whileHover={{
+        scale: 1.1,
+        transition: { duration: 0.2 }
+      }}
+    >
       {item}
-    </li>
+    </motion.li>
   })
 
   return <section className={styles.about} id='about'>

@@ -2,11 +2,12 @@ import { useState } from 'react';
 import { Item } from '../../Shared';
 import { technologyArr } from './constants';
 import styles from './Projects.module.scss';
+import { AnimatePresence } from 'motion/react';
 
 export const Projects = () => {
   const [index, setIndex] = useState<number>(0);
   const list = technologyArr.map(item => {
-    return <Item id={item.id} name={item.name} description={item.description} img={item.img} technology={item.technology} link={item.link} />
+    return <Item key={item.id} id={item.id} name={item.name} description={item.description} img={item.img} technology={item.technology} link={item.link} />
   });
 
   const points = technologyArr.map((item, index) => {
@@ -45,7 +46,9 @@ export const Projects = () => {
               <span className={styles.back}></span>
             </button>
             <ul className={styles.list}>
-              {list[index]}
+              <AnimatePresence mode='wait'>
+                {list[index]}
+              </AnimatePresence>
             </ul>
             <button className={styles.btn} onClick={moveNext}>
             <span className={styles.next}></span>

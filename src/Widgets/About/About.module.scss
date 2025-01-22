@@ -25,8 +25,9 @@
       grid-template-columns: 1fr 1fr 1fr 1fr;
       gap: 15px 20px;
       .item {
-        padding: 5px 10px;
+        width: 154px;
         text-align: center;
+        padding: 5px 10px;
         border-radius: 10px;
         box-shadow: 2px 2px 4px 0 var(--color-neumorphic-shadow-50), -2px -2px 4px 0 var(--color-neumorphic-light-70);
         background-color: var(--color-neumorphic-bg);
