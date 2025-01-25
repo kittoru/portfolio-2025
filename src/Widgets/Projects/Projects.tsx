@@ -41,19 +41,19 @@ export const Projects = () => {
         <div className={styles.inner}>
           <h2 className={styles.title}>Проекты</h2>
           <div className={styles.content}>
-            <button className={styles.btn} onClick={moveBack}>
+            <motion.button whileHover={{ scale: 1.2 }} transition={{duration: 0.5}} className={styles.btn} onClick={moveBack}>
               <span className={styles.back}></span>
               <span className={styles.back}></span>
-            </button>
+            </motion.button>
             <ul className={styles.list}>
               <AnimatePresence mode='wait'>
                 {list[indexProject]}
               </AnimatePresence>
             </ul>
-            <button className={styles.btn} onClick={moveNext}>
+            <motion.button whileHover={{ scale: 1.2 }} transition={{duration: 0.5}} className={styles.btn} onClick={moveNext}>
             <span className={styles.next}></span>
             <span className={styles.next}></span>
-            </button>
+            </motion.button>
           </div>
           <ul className={styles.scroll}>
             {points}
