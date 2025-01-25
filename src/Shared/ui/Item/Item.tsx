@@ -1,8 +1,7 @@
-import { motion } from 'motion/react';
+import { AnimationPlaybackControls, motion, useAnimate } from 'motion/react';
 import styles from './Item.module.scss';
 import useWindowDimensions from '../../lib/useWindowDimensions';
-import { animate } from 'motion';
-
+import { useEffect, useRef } from 'react';
 
 type Props = {
   id: number;
@@ -15,6 +14,8 @@ type Props = {
 
 export const Item = ({id, name, description, img, technology, link}: Props) => {
   const { width } = useWindowDimensions();
+  const [scope, animate] = useAnimate();
+  const ref = useRef<AnimationPlaybackControls>();
   const list = technology.map((item, index) => {
     return <li key={index} className={styles.str}>{item}</li>;
   });
@@ -37,7 +38,14 @@ export const Item = ({id, name, description, img, technology, link}: Props) => {
       animate: { opacity: 1, y: '0%' },
       exit: { opacity: 0, y: "100%" },
     };
-
+    useEffect(() => {
+      ref.current = animate(
+        scope.current,
+        { rotate: [15, -15] },
+        { duration: 4, ease: 'anticipate', repeat: Infinity, repeatType: "reverse"}
+      );
+      return () => ref.current?.stop();
+    }, []);
   return ( 
     <li key={id} className={styles.item}>
       <motion.div className={styles.top} variants={top} initial={ top.initial } animate={ top.animate } exit={ top.exit} transition={{ duration: 1 }}>
@@ -50,8 +58,7 @@ export const Item = ({id, name, description, img, technology, link}: Props) => {
         animate={{ scale: 1, opacity: 1 }} 
         transition={{ duration: 1 }}
         exit={{ scale: 0, opacity: 0 }}>
-         <motion.img src={img} className={styles.img}
-          animate={{ rotate: [15, -15] }} transition={{ duration: 4, ease: 'anticipate', repeat: Infinity, repeatType: "reverse" }}
+         <motion.img ref={scope} src={img} className={styles.img} onHoverStart={() => ref.current?.pause()} onHoverEnd={() => ref.current?.play() }
          ></motion.img>
       </motion.a>
       <motion.div className={styles.bottom} variants={bottom} initial={ bottom.initial } animate={ bottom.animate } exit={ bottom.exit } transition={{ duration: 1 }}>
