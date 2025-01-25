@@ -2,37 +2,37 @@ import { useState } from 'react';
 import { Item } from '../../Shared';
 import { technologyArr } from './constants';
 import styles from './Projects.module.scss';
-import { AnimatePresence } from 'motion/react';
+import { AnimatePresence, motion } from 'motion/react';
 
 export const Projects = () => {
-  const [index, setIndex] = useState<number>(0);
+  const [indexProject, setIndexProject] = useState<number>(0);
   const list = technologyArr.map(item => {
     return <Item key={item.id} id={item.id} name={item.name} description={item.description} img={item.img} technology={item.technology} link={item.link} />
   });
 
   const points = technologyArr.map((item, index) => {
     const changeItem = () => {
-      setIndex(index);
+      setIndexProject(index);
     }
     return <li key={item.id} className={styles.point}>
-      <button  className={styles.pointBtn} onClick={changeItem}></button>
+      <motion.button  className={styles.pointBtn} initial={{ scale: 1 }} animate={(indexProject === index)? {scale: 1.5, opacity: 1}: {opacity: 0.3}} exit={{ scale: 1 }} onClick={changeItem}></motion.button>
     </li>
   })
 
   const moveNext = ():void => {
-    if(index < list.length - 1) {
-      setIndex(index + 1);
+    if(indexProject < list.length - 1) {
+      setIndexProject(indexProject + 1);
       return;
     } 
-    setIndex(0);
+    setIndexProject(0);
   };
 
   const moveBack = ():void => {
-    if(index != 0) {
-      setIndex(index - 1);
+    if(indexProject != 0) {
+      setIndexProject(indexProject - 1);
       return;
     }
-    setIndex(list.length - 1);
+    setIndexProject(list.length - 1);
   };
   
   return ( 
@@ -47,7 +47,7 @@ export const Projects = () => {
             </button>
             <ul className={styles.list}>
               <AnimatePresence mode='wait'>
-                {list[index]}
+                {list[indexProject]}
               </AnimatePresence>
             </ul>
             <button className={styles.btn} onClick={moveNext}>
