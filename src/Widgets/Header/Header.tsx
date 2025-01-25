@@ -1,11 +1,17 @@
 import { useState } from 'react';
 import { Burger, Logo, useScrollLock } from '../../Shared';
 import styles from './Header.module.scss';
-import { AnimatePresence } from 'motion/react';
+import { AnimatePresence, motion } from 'motion/react';
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   useScrollLock(isOpen);
+  const val = {
+    whileHover: { 
+                  fontWeight: 700,
+                  textShadow: '5px 5px 3px rgb(164, 162, 180, 0.5)'},
+    transition: { duration: 0.6 }
+  };
 
   return (
     <header className={styles.header}>
@@ -14,9 +20,9 @@ export const Header = () => {
           <Logo />
           <nav className={styles.menu}>
             <ul className={styles.list}>
-              <li className={styles.item}><a href="#about">Обо мне</a></li>
-              <li className={styles.item}><a href="#projects">Проекты</a></li>
-              <li className={styles.item}><a href="#contacts">Контакты</a></li>
+              <motion.li variants={val}  whileHover={val.whileHover} transition={val.transition} className={styles.item}><a href="#about">Обо мне</a></motion.li>
+              <motion.li variants={val}  whileHover={val.whileHover} transition={val.transition} className={styles.item}><a href="#projects">Проекты</a></motion.li>
+              <motion.li variants={val} whileHover={val.whileHover} transition={val.transition} className={styles.item}><a href="#contacts">Контакты</a></motion.li>
             </ul>
           </nav>
           <button className={`${styles.btn} ${isOpen? styles.active: ''}`}
