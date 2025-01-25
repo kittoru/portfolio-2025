@@ -3,3 +3,4 @@ export { Item } from './ui/Item/Item';
 export { Burger } from './ui/Burger/Burger';
 
 export * from './lib/useScrollLock';
+export * from './lib/useWindowDimensions';
