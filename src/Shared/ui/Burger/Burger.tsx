@@ -11,7 +11,7 @@ export const Burger = ({close}:Props) => {
       initial={{ x: '100%' }}
       animate={{ x: '0%' }}
       exit={{ x: '100%' }}
-      transition={{ duration: 1.5, type: 'easy' }}> 
+      transition={{ duration: 1, type: 'easy' }}> 
       <li className={styles.item}><a href="#about" onClick={()=>{close(false)}}>Обо мне</a></li>
       <li className={styles.item}><a href="#projects" onClick={()=>{close(false)}}>Проекты</a></li>
       <li className={styles.item}><a href="#contacts" onClick={()=>{close(false)}}>Контакты</a></li>
