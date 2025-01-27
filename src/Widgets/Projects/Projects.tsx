@@ -15,7 +15,10 @@ export const Projects = () => {
       setIndexProject(index);
     }
     return <li key={item.id} className={styles.point}>
-      <motion.button  className={styles.pointBtn} initial={{ scale: 1 }} animate={(indexProject === index)? {scale: 1.5, opacity: 1}: {opacity: 0.3}} exit={{ scale: 1 }} onClick={changeItem}></motion.button>
+      <motion.button  className={styles.pointBtn} initial={{ scale: 1 }} 
+        whileHover={{scale: 1.5}}
+        animate={(indexProject === index)? {scale: 1.5, opacity: 1}: {opacity: 0.3}} 
+        exit={{ scale: 1 }} onClick={changeItem}></motion.button>
     </li>
   })
 
