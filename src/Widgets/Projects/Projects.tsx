@@ -36,11 +36,11 @@ export const Projects = () => {
   };
   
   return ( 
-    <section className={styles.projects} id='projects'>
+    <motion.section initial={{opacity: 0}} whileInView={{opacity:1, transition: {duration: 1, delay: 0.5}}} viewport={{once: true}} className={styles.projects} id='projects'>
       <div className="container">
         <div className={styles.inner}>
-          <h2 className={styles.title}>Проекты</h2>
-          <div className={styles.content}>
+          <motion.h2 initial={{opacity: 0, y: 20}} whileInView={{opacity:1, y: 0, transition: {duration: 1, delay: 0.7}}} viewport={{once: true}} className={styles.title}>Проекты</motion.h2>
+          <motion.div initial={{opacity: 0, y: 20}} whileInView={{opacity:1, y: 0, transition: {duration: 1, delay: 1}}} viewport={{once: true}}  className={styles.content}>
             <motion.button whileHover={{ scale: 1.2 }} transition={{duration: 0.5}} className={styles.btn} onClick={moveBack}>
               <span className={styles.back}></span>
               <span className={styles.back}></span>
@@ -54,12 +54,12 @@ export const Projects = () => {
             <span className={styles.next}></span>
             <span className={styles.next}></span>
             </motion.button>
-          </div>
-          <ul className={styles.scroll}>
+          </motion.div>
+          <motion.ul initial={{opacity: 0, y: 20}} whileInView={{opacity:1, y: 0, transition: {duration: 1, delay: 1.3}}} viewport={{once: true}} className={styles.scroll}>
             {points}
-          </ul>
+          </motion.ul>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
