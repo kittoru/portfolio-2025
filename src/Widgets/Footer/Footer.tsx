@@ -10,7 +10,7 @@ export const Footer = () => {
     <footer className={styles.footer} id='contacts'>
       <div className="container">
         <div className={styles.inner}>
-          <ul className={styles.list}>
+          <motion.ul initial={{opacity: 0, y: 20}} whileInView={{opacity: 1, y: 0, transition: {duration: 1, delay: 0.5}}} viewport={{once: true}} className={styles.list}>
             <motion.li variants={val} whileHover={val.whileHover} transition={val.transition} className={styles.item}>
               <a href="https://github.com/kittoru" target='blank' className={styles.link}>github</a>
             </motion.li>
@@ -20,8 +20,8 @@ export const Footer = () => {
             <motion.li variants={val} whileHover={val.whileHover} transition={val.transition} className={styles.item}>
               <a href="https://t.me/kittoruFromHell" target='blank' className={styles.link}>telegram</a>
             </motion.li>
-          </ul>
-          <span className={styles.text}>Portfolio 2025</span>
+          </motion.ul>
+          <motion.span initial={{opacity: 0}} whileInView={{opacity: 1, transition: {duration: 1, delay: 0.5}}} viewport={{once: true}} className={styles.text}>Portfolio 2025</motion.span>
         </div>
       </div>
     </footer>

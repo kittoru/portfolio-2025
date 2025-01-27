@@ -1,6 +1,6 @@
 
 .footer {
-  padding-top: 100px;
+  padding-top: 200px;
   .inner {
     display: flex;
     flex-direction: column;
@@ -16,6 +16,7 @@
     }
   }
   @media (max-width: 600px) {
+    padding-top: 100px;
     .inner {
       .list {
         flex-direction: column;
