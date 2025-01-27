@@ -14,7 +14,7 @@ export const Header = () => {
   };
 
   return (
-    <header className={styles.header}>
+    <motion.header className={styles.header} initial={{opacity: 0, y: 10}} whileInView={{opacity: 1, y: 0}} viewport={{ once: true }} transition={{duration: 1}}>
       <div className="container">
         <div className={styles.inner}>
           <Logo />
@@ -35,6 +35,6 @@ export const Header = () => {
           </AnimatePresence>
         </div>
       </div>
-    </header>
+    </motion.header>
   )
 }
