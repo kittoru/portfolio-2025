@@ -31,6 +31,18 @@
         transform: rotate(45deg);
       }
     }
-    
+  }
+  @media (max-width: 550px) {
+    right: 20px;
+    bottom: 20px;
+    height: 32px;
+    width: 32px;
+    .arrow {
+      gap: 6px;
+      .side {
+        height: 3px;
+        width: 15px;
+      }
+    }
   }
 }
