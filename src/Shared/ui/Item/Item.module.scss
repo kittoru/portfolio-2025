@@ -74,6 +74,7 @@
       }
       .bottom {
         margin-top: 0;
+        height: 150px;
       }
     }
   }
@@ -81,6 +82,16 @@
     & {
       .link {
           display: none;
+      }
+      .top {
+        .description {
+          display: flex;
+          align-items: center;
+          height: 100px;
+        }
+      }
+      .bottom {
+        height: 100px;
       }
     }
   }
