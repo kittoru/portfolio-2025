@@ -25,11 +25,11 @@ export const Header = () => {
               <motion.li variants={val} whileHover={val.whileHover} transition={val.transition} className={styles.item}><a href="#contacts">Контакты</a></motion.li>
             </motion.ul>
           </nav>
-          <button className={`${styles.btn} ${isOpen? styles.active: ''}`}
+          <motion.button initial={{opacity: 0, x: '100%'}} animate={{opacity: 1, x: '0%'}} transition={{duration: 1}} className={`${styles.btn} ${isOpen? styles.active: ''}`}
           onClick={() => {setIsOpen(!isOpen)}}>
             <span></span>
             <span></span>
-          </button>
+          </motion.button>
           <AnimatePresence>
             {isOpen? <Burger key={1} close={setIsOpen}/>: <></>}
           </AnimatePresence>
