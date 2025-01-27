@@ -14,16 +14,16 @@ export const Header = () => {
   };
 
   return (
-    <motion.header className={styles.header} initial={{opacity: 0, y: 10}} whileInView={{opacity: 1, y: 0}} viewport={{ once: true }} transition={{duration: 1}}>
+    <header className={styles.header} >
       <div className="container">
         <div className={styles.inner}>
           <Logo />
           <nav className={styles.menu}>
-            <ul className={styles.list}>
+            <motion.ul initial={{opacity: 0, x: '100%'}} animate={{opacity: 1, x: '0%'}} transition={{duration: 1}} className={styles.list}>
               <motion.li variants={val}  whileHover={val.whileHover} transition={val.transition} className={styles.item}><a href="#about">Обо мне</a></motion.li>
               <motion.li variants={val}  whileHover={val.whileHover} transition={val.transition} className={styles.item}><a href="#projects">Проекты</a></motion.li>
               <motion.li variants={val} whileHover={val.whileHover} transition={val.transition} className={styles.item}><a href="#contacts">Контакты</a></motion.li>
-            </ul>
+            </motion.ul>
           </nav>
           <button className={`${styles.btn} ${isOpen? styles.active: ''}`}
           onClick={() => {setIsOpen(!isOpen)}}>
@@ -35,6 +35,6 @@ export const Header = () => {
           </AnimatePresence>
         </div>
       </div>
-    </motion.header>
+    </header>
   )
 }
