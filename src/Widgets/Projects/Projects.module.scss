@@ -60,6 +60,16 @@
       }
     }
   }
+  @media (hover: none) and (pointer: coarse) {
+    .inner {
+      .content {
+        justify-content: center;
+        .btn {
+          display: none;
+        }
+      }
+    }
+}
   @media (max-width: 1150px) {
     .inner {
       .content {
