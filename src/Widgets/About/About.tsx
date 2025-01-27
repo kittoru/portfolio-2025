@@ -1,20 +1,9 @@
-
-import { useState } from 'react';
-import styles from './About.module.scss';
 import { list } from './constants';
-import { motion, useMotionValueEvent, useScroll, useTransform } from 'motion/react';
+import { motion } from 'motion/react';
 
+import styles from './About.module.scss';
 
 export const About = () => {
-  const [scrollDirection, setScrollDirection] = useState('down');
-  const { scrollYProgress } = useScroll();
-  // const scale = useTransform(scrollYProgress, scrollDirection === 'down'? [0.4, 1]: [0, 0.2], scrollDirection === 'down'? [1, 0.6]: [0.6, 1]);
-  // const opacity = useTransform(scrollYProgress, scrollDirection === 'down'? [0.4, 1]: [0, 0.2], scrollDirection === 'down'? [1, 0]: [0, 1]);
-
-  useMotionValueEvent(scrollYProgress, 'change', (val) => {
-    setScrollDirection(val > 0.5 ? 'down' : "up")
-  });
-
   const skills = list.map((item,index) => {
     return <motion.li key={index} className={styles.item}
       whileHover={{
