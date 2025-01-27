@@ -1,8 +1,6 @@
 
 
 .about {
-  padding-top: 200px;
-  padding-bottom: 100px;
   .inner {
     display: flex;
     align-items: center;
@@ -62,11 +60,6 @@
       .skills {
         grid-template-columns: 1fr 1fr 1fr 1fr;
       }
-    }
-  }
-  @media (max-width: 768px) {
-    & {
-      padding: 100px 0px;
     }
   }
   @media (max-width: 720px) {
