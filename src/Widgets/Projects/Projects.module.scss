@@ -1,6 +1,8 @@
 @use '../../app/styles/mixins.scss';
 
 .projects {
+  padding-top: 200px;
+  margin-top: -200px;
   .inner {
     display: flex;
     flex-direction: column;
